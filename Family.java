@@ -83,6 +83,16 @@ class Parent {
 		System.out.println();
 	}
 
+	boolean randBool() {
+		int random = (int) (Math.random() * 2) ;
+
+		boolean b = (random != 0);
+		
+		return b;
+	}
+
+
+
 }
 
 class Child  extends Parent{
@@ -92,6 +102,27 @@ class Child  extends Parent{
 	}
 
 	Child(Parent ob0, Parent ob1) {
+
+		sex =  randBool() ? "male" : "female";
+		eyeColor = randBool() ? ob0.getEyeColor() : ob1.getEyeColor ;
+		hairColor =  randBool() ? ob0.hairColor : ob1.hairColor ;
+		hairTexture =  randBool() ? ob0.hairTexture : ob1.hairTexture;
+		height =  randBool() ? ob0.height : ob1.height ;
+		if( sex == "male"){
+			penisSize = ob0.penisSize ;
+		}
+		else{
+			penisSize = ob1.penisSize;
+
+		}
+		
+		creditCard = false ;
+		showAll();
+
+
+
+
+
 
 	}
 
@@ -107,6 +138,19 @@ class Family {
 
 		System.out.println(mother.penisSize);
 
-		Child son = new Child();
+		//Child ch1 = new Child(father,mother);
+
+		//Child ch2 = new Child(father,mother);
+
+		// for (int i = 0; i <= 20; i ++ ) {
+		// 	mother.randBool();
+			
+		// }
+
+		
+
+		// if(0) {
+		// 	System.out.println("hi");
+		// }
 	}
 }
